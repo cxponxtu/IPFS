@@ -28,11 +28,13 @@
         <tr>
             <th>Filename</th>
             <th>CID</th>
+            <th>URL IPFS Pubic Gateway</th>
         </tr>
     {% for file in files %}
         <tr>
             <td>{{ file.filename }}</td>
             <td>{{ file.cid }}</td>
+            <td>https://ipfs.io/ipfs/{{ file.cid }}</td>
         </tr>
     {% endfor %}
     </table>
