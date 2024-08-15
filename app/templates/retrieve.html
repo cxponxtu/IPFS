@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve File from IPFS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Retrieve File from IPFS</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-messages">
+                <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+    <form method="post">
+        <label for="cid">Enter CID:</label>
+        <input type="text" id="cid" name="cid" required>
+        <input type="submit" value="Retrieve">
+    </form>
+    <a href="{{ url_for('upload_file') }}" class="button">Back to Upload</a>
+</body>
+</html>
